@@ -1,2 +1,2 @@
 all: 
-	g++ main.cc c_mesh.cc -o app
+	g++ -O3 main.cc c_mesh.cc -o app

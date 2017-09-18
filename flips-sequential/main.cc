@@ -21,18 +21,18 @@ int main(int argc, char **argv){
 		printf("must run as ./app <offmesh_filename>\n");
 		exit(1);
 	}
-	//printf("loading mesh.......");fflush(stdout);
+	printf("loading mesh.....................");fflush(stdout);
 	c_malla *m = new c_malla(argv[1]);
-	//printf("ok\n"); fflush(stdout);
+	printf("done\n"); fflush(stdout);
 	//printf("min angle......."); fflush(stdout);
 	double mangle = m->min_angle();
 	//printf("%e rad (%f degrees)\n", mangle, 180.0*mangle/LAWSON_PI);
-	//printf("transforming into Delaunay.......");fflush(stdout);
+	printf("transforming into Delaunay.......");fflush(stdout);
 
 	startTimer();
 		ef = m->cpu_improve();
 	time = stopTimer();
-	//printf("ok: %.5g secs\n", time);
+	printf("done: %.5g secs\n", time);
 	printf("%f\n", time);
 
 	ss << argv[1] << ".law.off";
